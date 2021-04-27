@@ -1,0 +1,49 @@
+<h1>Welcome!</h1>
+
+<div class="play-container">
+    <h3 ngNonBindable>{{ Interpolation }} or One-way binding</h3>
+    <h3>*ngIf, [ngIf] and [ngIfElse]</h3>
+    <h3>[ngStyle], and [style] binding</h3>
+    <h3>ngNonBindable</h3>
+    <br>
+    <p>
+        You've clicked
+        <span (click)="youClicked()">this</span>
+        <span [style.color]="counter > 4 ? 'red' : 'black'"> {{ counter }}</span> times.
+        <ng-template [ngIf]="counter > 4" [ngIfElse]="none">
+            <p>You've clicked more than 4 times.</p>
+            <div [ngStyle]="{
+                'background-color': counter > 15 ? 'yellow' : 'none',
+                'color': counter > 15 ? 'red' : 'black',
+                'font-weight': counter > 15 ? 'bold' : 'regular'
+            }">STOP!</div>
+        </ng-template>
+        <ng-template #none>
+            <p>Keep clicking.</p>
+        </ng-template>
+    </p>
+</div>
+
+<div class="play-container">
+    <h3>([ngModel]) or Two-way binding</h3>
+    <input type="text" [(ngModel)]="writeText">
+    <br>
+    <div *ngIf="!writeText"><strong>You said: </strong></div>
+    <div *ngIf="writeText"><strong>You said: </strong> "{{ writeText }}"</div>
+</div>
+
+<div class="play-container">
+    <h3>css [class] binding</h3>
+    <div [class.dark-theme]="darkTheme === true">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, nisi. Ad unde aliquid commodi excepturi rem quibusdam eaque et recusandae minima, perspiciatis dolorem nesciunt nisi modi, quis ex accusamus assumenda consequuntur voluptatum adipisci fugiat, amet magnam saepe sunt eum. At blanditiis quidem velit officia quod nisi quis. Sunt, in rerum?</p>
+        <button (click)="darkTheme = false">Light</button>
+        <button (click)="darkTheme = true">Dark</button>
+    </div>
+</div>
+
+<div class="play-container">
+    <h3>*ngClasses</h3>
+</div>
+
+<div style="height: 200px;"></div>

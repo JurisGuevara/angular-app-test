@@ -10,6 +10,10 @@ import { ExtraComponent } from './extra/extra.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+// imports for angular materials
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomMaterialModule } from './materials/brewery-material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
